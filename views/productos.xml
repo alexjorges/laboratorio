@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="laboratorio_productos_action" name="productos"
+                     res_model="laboratorio.productos" />
+
+
+        <record id="laboratorio_productos_view_tree" model="ir.ui.view">
+            <field name="name">Lista Productos</field>
+            <field name="model">laboratorio.productos</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="codigo" />
+                    <field name="nombre" />
+                    <field name="cantidad" />
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="laboratorio_productos_view_form" model="ir.ui.view">
+            <field name="name">Formulario de Productos</field>
+            <field name="model">laboratorio.productos</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="codigo" />
+                        <field name="nombre" />
+                        <field name="cantidad" />
+                    </group>
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="laboratorio_productos_view_search_productos" model="ir.ui.view">
+            <field name="name">Busqueda Productos</field>
+            <field name="model">laboratorio.productos</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nombre" />
+                </search>
+            </field>
+        </record>
+
+        <menuitem name="Menu" id="menu_menu" parent="menu_laboratorio" sequence="10"/>
+        <menuitem name="Productos" id="menu_productos" action="laboratorio_productos_action" parent="menu_menu" sequence="10"/>
+
+    </data>
+</odoo>

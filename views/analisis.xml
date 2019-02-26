@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="laboratorio_analisis_action" name="analisis"
+                     res_model="laboratorio.analisis" />
+
+
+        <record id="laboratorio_analisis_view_tree" model="ir.ui.view">
+            <field name="name">Lista analisis</field>
+            <field name="model">laboratorio.analisis</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field  name="tipo" />
+                    <field name="codigo" />
+                    <field name="material" />
+                    <field name="productos" />
+                    <field name="tecnico" />
+                    <field name="cliente" />
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="laboratorio_analisis_view_form" model="ir.ui.view">
+            <field name="name">Formulario de Analisis</field>
+            <field name="model">laboratorio.analisis</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field  name="tipo" />
+                        <field name="codigo" />
+                        <field name="material" />
+                        <field name="productos" />
+                        <field name="tecnico" />
+                        <field name="cliente" />
+                        <field name="resultado" />
+                    </group>
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="laboratorio_analisis_view_search_analisis" model="ir.ui.view">
+            <field name="name">Busqueda analisis</field>
+            <field name="model">laboratorio.analisis</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="tipo" />
+                </search>
+            </field>
+        </record>
+
+        <menuitem name="Menu" id="menu_menu" parent="menu_laboratorio" sequence="10"/>
+        <menuitem name="Analisis" id="menu_analisis" action="laboratorio_analisis_action" parent="menu_menu" sequence="10"/>
+
+    </data>
+</odoo>
